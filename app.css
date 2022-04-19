@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    outline: 2px red solid;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    
+    /* justify-content: center; */
+    font-family: 'Space Mono', monospace;
+    font-size: 24px;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    outline: 2px green solid;
+}
+
+input {
+    display:block;
+    
+}
+
+.labelIcon {
+  display: flex;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
