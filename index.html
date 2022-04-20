@@ -23,58 +23,87 @@
     <h1>SPLI<br>TTER</h1>
   </header>
   <main id="card">
-    <form action="">
+    <form action="" autocomplete="off">
       <div>
         <h2>Bill</h2>
         <label for="bill_amount" class="labelIcon">
-          <img src="images/icon-dollar.svg" alt="Icon of dollar sign">
+          <img class="sourceIcon" src="images/icon-dollar.svg" alt="Icon of dollar sign">
           <input type="text" id="bill_amount">
         </label>
       </div>
 
-      <div>
-        <h2>Select Tip %</h2>
+      <div id="selectTipPercent">
+        <h2 class="howMuch">Select Tip %</h2>
+        <div class="fivePerc">
+          <input type="radio" id="fivePercent" name="tipPercent" value="5" checked>
+          <label for="fivePercent">5%</label>
+        </div>
 
-        <input type="radio" id="fivePercent" name="tipPercent" value="5">
-        <label for="fivePercent">5%</label>
+        <div class="tenPerc">
+          <input type="radio" id="tenPercent" name="tipPercent" value="10">
+          <label for="tenPercent">10%</label>
+        </div>
 
-        <input type="radio" id="tenPercent" name="tipPercent" value="10">
-        <label for="tenPercent">10%</label>
+        <div class="fifteenPerc">
+          <input type="radio" id="fifteenPercent" name="tipPercent" value="15">
+          <label for="fifteenPercent">15%</label>
+        </div>
 
-        <input type="radio" id="fifteenPercent" name="tipPercent" value="15">
-        <label for="tenPercent">15%</label>
+        <div class="twentyfivePerc">
+          <input type="radio" id="twentyFivePercent" name="tipPercent" value="25">
+          <label for="twentyFivePercent">25%</label>
+        </div>
 
-        <input type="radio" id="twentyfivePercent" name="tipPercent" value="25">
-        <label for="tenPercent">25%</label>
+        <div class="fiftyPerc">
+          <input type="radio" id="fiftyPercent" name="tipPercent" value="50">
+          <label for="fiftyPercent">50%</label>
+        </div>
 
-        <input type="radio" id="fiftyPercent" name="tipPercent" value="50">
-        <label for="fiftyPercent">50%</label>
+        <div class="customPerc">
+          <input type="radio" id="customPercent" name="tipPercent">
+          <label for="customPercent">Custom</label>
+        </div>
 
-        <input type="radio" id="customPercent" name="tipPercent">
-        <label for="fiftyPercent">Custom</label>
       </div>
 
       <div>
-        <h2>Number of People</h2>
+        <div id="noZero">
+          <h2>Number of People</h2>
+          <h2 id="inputWarning">Can't be zero</h2>
+        </div>
+
 
         <label for="peopleCount" class="labelIcon">
-          <img src="images/icon-person.svg" alt="icon of person">
+          <img class="sourceIcon" src="images/icon-person.svg" alt="icon of person">
           <input type="text" id="peopleCount">
         </label>
       </div>
 
-      <div>
-        <h2>Tip Amount</h2>
-        <label for="tipCalc">/ person</label>
-        <input type="number" readonly value="0" id="tipCalc">
+      <div id="calculatedResult">
+        <div class="one">
+          <h3 class="calcTopLabel">Tip Amount</h3>
+          <label for="tipCalc" class="proportion">/ person </label>
+        </div>
 
-        <h2>Total</h2>
-        <label for="totalCalc">/ person</label>
-        <input type="number" readonly value="0" id="totalCalc">
+        <div class="two">
+          <input type="number" readonly value="0" id="tipCalc">
+        </div>
 
-        <button type="button" class="resetButton">Reset</button>
+        <div class="three">
+          <h3 class="calcTopLabel">Total</h3>
+          <label for="totalCalc" class="proportion">/ person</label>
+        </div>
+
+        <div class="four">
+          <input type="number" readonly value="0" id="totalCalc">
+        </div>
+
+        <button type="button" id="resetButton" class="five">RESET</button>
 
       </div>
+
+
+
 
 
     </form>
