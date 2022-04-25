@@ -23,12 +23,12 @@
     <h1>SPLI<br>TTER</h1>
   </header>
   <main id="card">
-    <form action="" autocomplete="off">
+    <form action="" autocomplete="off" id="calculator">
       <div>
         <h2>Bill</h2>
         <label for="bill_amount" class="labelIcon">
           <img class="sourceIcon" src="images/icon-dollar.svg" alt="Icon of dollar sign">
-          <input type="text" id="bill_amount">
+          <input type="text" id="bill_amount" tabindex="1">
         </label>
       </div>
 
@@ -36,46 +36,49 @@
         <h2 class="howMuch">Select Tip %</h2>
         <div class="fivePerc">
           <input type="radio" id="fivePercent" name="tipPercent" value="5" checked>
-          <label for="fivePercent">5%</label>
+          <label for="fivePercent" tabindex="2">5%</label>
         </div>
 
         <div class="tenPerc">
           <input type="radio" id="tenPercent" name="tipPercent" value="10">
-          <label for="tenPercent">10%</label>
+          <label for="tenPercent" tabindex="3">10%</label>
         </div>
 
         <div class="fifteenPerc">
           <input type="radio" id="fifteenPercent" name="tipPercent" value="15">
-          <label for="fifteenPercent">15%</label>
+          <label for="fifteenPercent" tabindex="4">15%</label>
         </div>
 
         <div class="twentyfivePerc">
           <input type="radio" id="twentyFivePercent" name="tipPercent" value="25">
-          <label for="twentyFivePercent">25%</label>
+          <label for="twentyFivePercent" tabindex="5">25%</label>
         </div>
 
         <div class="fiftyPerc">
           <input type="radio" id="fiftyPercent" name="tipPercent" value="50">
-          <label for="fiftyPercent">50%</label>
+          <label for="fiftyPercent" tabindex="6">50%</label>
         </div>
 
         <div class="customPerc">
-          <input type="radio" id="customPercent" name="tipPercent">
-          <label for="customPercent">Custom</label>
+          <input type="radio" id="customPercent" name="tipPercent" onclick="onButtonClick()">
+          <label for="customPercent" tabindex="7" id="customPercentLabel">Custom
+            <input type="text" class="hide" id="customEntry" ;></label>
         </div>
+
+
 
       </div>
 
       <div>
         <div id="noZero">
           <h2>Number of People</h2>
-          <h2 id="inputWarning">Can't be zero</h2>
+          <h2 id="inputWarning" >Can't be zero</h2>
         </div>
 
 
-        <label for="peopleCount" class="labelIcon">
+        <label for="peopleCount" class="labelIcon" id="peopleLabel" >
           <img class="sourceIcon" src="images/icon-person.svg" alt="icon of person">
-          <input type="text" id="peopleCount">
+          <input type="text" id="peopleCount" tabindex="8">
         </label>
       </div>
 
@@ -86,7 +89,8 @@
         </div>
 
         <div class="two">
-          <input type="number" readonly value="0" id="tipCalc">
+          <div class="dollar">$<span id="tipCalc">0.00</span> </div>
+          <!-- <input type="number" id="tipCalc" tabindex="-1"> -->
         </div>
 
         <div class="three">
@@ -95,10 +99,11 @@
         </div>
 
         <div class="four">
-          <input type="number" readonly value="0" id="totalCalc">
+          <div class="dollar">$<span id="totalCalc">0.00</span> </div>
+          <!-- <div type="number"  id="totalCalc" tabindex="-2"> -->
         </div>
 
-        <button type="button" id="resetButton" class="five">RESET</button>
+        <button type="button" id="resetButton" class="five" tabindex="9" onclick="reset()">RESET</button>
 
       </div>
 
@@ -112,8 +117,9 @@
 
   <footer>
     <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://https://github.com/Johnsonworld">Johnsonworld</a>.
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" tabindex="-3">Frontend
+        Mentor</a>.
+      Coded by <a href="https://https://github.com/Johnsonworld" tabindex="-4">Johnsonworld</a>.
     </div>
   </footer>
 

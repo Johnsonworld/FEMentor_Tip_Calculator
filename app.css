@@ -28,6 +28,7 @@ body {
     max-width: 375px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   
     font-family: 'Space Mono', monospace;
     font-size: 24px;
@@ -88,11 +89,16 @@ input {
     font-size: inherit;
     margin-right: 2rem;
     cursor:pointer;
-    outline:none;
-    
-    
-    
+    outline:none;    
 }
+
+.labelIcon:hover, .labelIcon:focus-within {
+    outline: 2px solid var(--primaryCyan);
+}
+
+
+
+
 
 #selectTipPercent {
     display: grid;
@@ -123,11 +129,16 @@ input {
     border-radius: .5vh;
     text-align: center;
     display: block;
-    height: 4vh;
+    height: 5vh;
     
     
     
 }
+
+ #selectTipPercent .customPerc label {
+     background-color: var(--veryLightGrayishCyan);
+     color: var(--darkGrayishCyan); 
+ }
 
 
 .howMuch {
@@ -185,6 +196,22 @@ input {
     background-color: var(--primaryCyan);
 }  */
 
+#customPercentLabel {
+    position: relative;
+}
+
+#customEntry {
+    position: absolute;
+    top: 0;
+  right: 0;
+  left: 0;
+  padding: 1vh;
+    border-radius: .5vh;
+    text-align: right;
+   outline: 2px solid var(--primaryCyan);
+    height: 5vh;
+    font-family: inherit;
+}
 
 .labelIcon {
   display: flex; 
@@ -193,6 +220,8 @@ input {
   padding-left:1rem;
   
 }
+
+
 
 .sourceIcon {
     height: 100%;
@@ -214,6 +243,7 @@ input {
     font-size: 1rem;
     padding: 0;
     color: var(--warning);
+    display: none;
     
 }
 
@@ -231,7 +261,7 @@ input {
        
 }
 
-#tipCalc, #totalCalc {
+#tipCalc, #totalCalc, .dollar {
     background: transparent;
     color: var(--primaryCyan);
 }
@@ -244,7 +274,7 @@ input {
 
 .two, .four {
     grid-column: 2 / 3;
-    
+    text-align: right;
     margin-top: 1rem;
     
 }
@@ -293,3 +323,34 @@ input {
 .attribution a {
     color: hsl(228, 45%, 44%); 
 }
+
+.hide{
+  display:none;
+  
+  /* opacity: 0; */
+  
+}
+.show{
+  display:block;
+  
+  /* margin: -50px 0; */
+  z-index:10;
+  
+ 
+}
+
+#inputWarning.visible {
+    display: block;
+
+}
+
+#peopleLabel.visible {
+    outline: 2px solid var(--warning);
+}
+
+
+/* #peopleCount.invalid {
+    border-color: red;
+} */
+
+   
