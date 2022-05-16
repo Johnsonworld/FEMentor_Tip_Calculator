@@ -30,6 +30,25 @@ function onCustomClick() {
     
     }
 
+function onStaticTipClick() {
+    let checkCustom = document.getElementById('customPercent').className;
+    
+    if (checkCustom === "hide") {
+        document.getElementById('customEntry').className = "hide";
+        document.getElementById('customEntry').value = "";
+        document.getElementById('customPercent').className = "show";
+        document.getElementById('customPercentLabel').className = "show";
+        document.getElementsByClassName('customPerc').className = "show";
+
+        
+    }
+    return;
+}
+
+const isActiveCustom = document.getElementsByClassName("staticTip");
+for (var i = 0; i < isActiveCustom.length; i++) {
+    isActiveCustom[i].addEventListener("click",onStaticTipClick)
+};
 
 const checkZero = document.getElementById("peopleCount");
 
@@ -49,9 +68,7 @@ function validate(e) {
         warning.classList.add("visible");
         const warningOutline = document.getElementById("peopleLabel");
         warningOutline.classList.add("visible");
-        // peopleValue.classList.add("invalid");
-        // warning.setAttribute("aria-hidden", false);
-        // peopleValue.setAttribute("aria-invalid", true);
+       
 
 
     } else {
@@ -60,9 +77,7 @@ function validate(e) {
         const warningOutline = document.getElementById("peopleLabel");
         warning.classList.remove("visible");
         warningOutline.classList.remove("visible");
-        // peopleValue.classList.remove("invalid");
-        // warning2.setAttribute("aria-hidden", true);
-        // peopleValue.setAttribute("aria-invalid", false);
+       
     }
 
 
