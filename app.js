@@ -1,14 +1,16 @@
+//-----------------------------------------------------------
+//Tab through selections through Reset
 let inputs = document.querySelectorAll("input,tipPercent");
 
 for (let i = this.tabIndex; i < inputs.length; i++) {
-    
+
     inputs[i].addEventListener("keypress", function (e) {
-       
+
         if (e.which == 13 || e.which == 9) {
             e.preventDefault();
-            
+
             let nextInput = document.querySelectorAll('[tabIndex="' + (this.tabIndex + 1) + '"]');
-            
+
             if (nextInput.length === 0) {
                 nextInput = document.querySelectorAll('[tabIndex="1"]');
             }
@@ -17,50 +19,72 @@ for (let i = this.tabIndex; i < inputs.length; i++) {
         }
     })
 }
+//-----------------------------------------------------------
 
+//-----------------------------------------------------------
+//Toggle custom percent from label to entry field
 function onCustomClick() {
-
 
     document.getElementById('customEntry').className = "show";
     document.getElementById('customEntry').focus();
     document.getElementById('customPercent').className = "hide";
     document.getElementById('customPercentLabel').className = "hide";
     document.getElementsByClassName('customPerc').className = "hide";
-    
-    
-    }
+}
+//------------------------------------------------------------
 
+//------------------------------------------------------------
+//Return custom percent from entry field to label
 function onStaticTipClick() {
     let checkCustom = document.getElementById('customPercent').className;
-    
+
     if (checkCustom === "hide") {
         document.getElementById('customEntry').className = "hide";
         document.getElementById('customEntry').value = "";
         document.getElementById('customPercent').className = "show";
         document.getElementById('customPercentLabel').className = "show";
         document.getElementsByClassName('customPerc').className = "show";
-
-        
     }
     return;
 }
+//-----------------------------------------------------------
 
+//-----------------------------------------------------------
+//Check all other tip amounts to see if they are selected,
+//if they are, reset custom percent
 const isActiveCustom = document.getElementsByClassName("staticTip");
 for (var i = 0; i < isActiveCustom.length; i++) {
-    isActiveCustom[i].addEventListener("click",onStaticTipClick)
+    isActiveCustom[i].addEventListener("click", onStaticTipClick)
 };
+//-----------------------------------------------------------
 
+//-----------------------------------------------------------
+//Check number of people field, whenever change is made
+//validate for zero and recalculate tip amount 
 const checkZero = document.getElementById("peopleCount");
-
 checkZero.addEventListener("change", validate);
 checkZero.addEventListener("change", getTipAmount);
+//------------------------------------------------------------
 
+//------------------------------------------------------------
+//Allow for recalculation with a change in selections,
+//instead of having to reset each time
+const update = document.getElementsByClassName("reCalc");
+
+for (var i = 0; i < update.length; i++) {
+   if (update[i].value !== "") {
+
+    update[i].addEventListener("keydown", getTipAmount) 
+   }       
+   };
+//-------------------------------------------------------------
+
+//-------------------------------------------------------------
+//Validate that number of people is not zero and show warning
 function validate(e) {
     e.preventDefault();
 
     const peopleValue = parseInt(document.getElementById("peopleCount").value);
-    // console.log(peopleValue);
-    // console.log(peopleValue === 0);
 
     if (peopleValue === 0) {
 
@@ -68,8 +92,6 @@ function validate(e) {
         warning.classList.add("visible");
         const warningOutline = document.getElementById("peopleLabel");
         warningOutline.classList.add("visible");
-       
-
 
     } else {
 
@@ -77,32 +99,29 @@ function validate(e) {
         const warningOutline = document.getElementById("peopleLabel");
         warning.classList.remove("visible");
         warningOutline.classList.remove("visible");
-       
+
     }
+};
+//-------------------------------------------------------------
 
-
-
-}
-
-
+//-------------------------------------------------------------
+//Calculate and populate tip and total per person
 function getTipAmount() {
 
     let amount = document.getElementById("bill_amount").value;
     let peoples = document.getElementById("peopleCount").value;
-    console.log(typeof peoples);
+
     if (parseInt(peoples) === 0) {
         return;
     } else {
-        // let selectedPercent = 0;
-        //Get a reference to the form id
+
         let theForm = document.forms["calculator"];
-        //Get a reference to the % the user Chooses name="tipPercent":
         let percentClicked = theForm.elements["tipPercent"];
-        console.log(percentClicked);
+
 
         if (percentClicked.value === "on") {
             percentChosen = parseInt(document.getElementById("customEntry").value);
-            console.log(percentChosen);
+
 
         } else {
             percentChosen = parseInt(theForm.elements["tipPercent"].value);
@@ -110,34 +129,14 @@ function getTipAmount() {
 
         calcTipAmount = ((percentChosen / 100) * parseFloat(amount)) / peoples;
         total = (calcTipAmount + (parseFloat(amount) / peoples));
-        // let percentChosen = parseInt(theForm.elements["tipPercent"].value);
-
-
-        //Here since there are 4 radio buttons selectedCake.length = 4
-        //We loop through each radio buttons
-        // for (let i = 0; i < percentChosen.length; i++) {
-        //     //if the radio button is checked
-        //     if (percentChosen[i].checked) {
-        //         //we set cakeSizePrice to the value of the selected radio button
-        //         //i.e. if the user choose the 8" cake we set it to 25
-        //         //by using the cake_prices array
-        //         //We get the selected Items value
-        //         //For example cake_prices["Round8".value]"
-        //         selectedPercent = tipAmount[percentChosen[i].value];
-        //         console.log(selectedPercent);
-        //         //If we get a match then we break out of this loop
-        //         //No reason to continue if we get a match
-        //         break;
-        //     }
-        // }
-        //We return the cakeSizePrice
-
-
         document.getElementById("tipCalc").innerHTML = (calcTipAmount).toFixed(2);
         document.getElementById("totalCalc").innerHTML = (total).toFixed(2);
-    }// return calcTipAmount;
+    }
 }
+//----------------------------------------------------------------------------
 
+//----------------------------------------------------------------------------
+//Reset Form
 function clearForm() {
 
     document.getElementById("calculator").reset();
@@ -152,9 +151,6 @@ function clearForm() {
 
     document.getElementById("tipCalc").innerHTML = "0.00";
     document.getElementById("totalCalc").innerHTML = "0.00";
-
-
-
 
 }
 

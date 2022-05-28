@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
 
 </head>
 
@@ -28,40 +28,40 @@
         <h2>Bill</h2>
         <label for="bill_amount" class="labelIcon">
           <img class="sourceIcon" src="images/icon-dollar.svg" alt="Icon of dollar sign">
-          <input type="text" id="bill_amount" tabindex="1">
+          <input type="text" id="bill_amount" tabindex="1" class="reCalc">
         </label>
 
 
         <div id="selectTipPercent">
           <h2 class="howMuch">Select Tip %</h2>
           <div class="fivePerc staticTip">
-            <input type="radio" id="fivePercent" name="tipPercent" value="5" checked>
+            <input type="radio" id="fivePercent" name="tipPercent" value="5" class="reCalc" checked>
             <label for="fivePercent" tabindex="2">5%</label>
           </div>
 
           <div class="tenPerc staticTip">
-            <input type="radio" id="tenPercent" name="tipPercent" value="10">
+            <input type="radio" id="tenPercent" name="tipPercent" value="10" class="reCalc">
             <label for="tenPercent" tabindex="3">10%</label>
           </div>
 
           <div class="fifteenPerc staticTip">
-            <input type="radio" id="fifteenPercent" name="tipPercent" value="15">
+            <input type="radio" id="fifteenPercent" name="tipPercent" value="15" class="reCalc">
             <label for="fifteenPercent" tabindex="4">15%</label>
           </div>
 
           <div class="twentyfivePerc staticTip">
-            <input type="radio" id="twentyFivePercent" name="tipPercent" value="25">
+            <input type="radio" id="twentyFivePercent" name="tipPercent" value="25" class="reCalc">
             <label for="twentyFivePercent" tabindex="5">25%</label>
           </div>
 
           <div class="fiftyPerc staticTip">
-            <input type="radio" id="fiftyPercent" name="tipPercent" value="50">
+            <input type="radio" id="fiftyPercent" name="tipPercent" value="50" class="reCalc">
             <label for="fiftyPercent" tabindex="6">50%</label>
           </div>
 
           <div class="customPerc">
             <input type="radio" id="customPercent" name="tipPercent" onclick="onCustomClick()">
-            <label for="customPercent" tabindex="7" id="customPercentLabel">Custom
+            <label for="customPercent" tabindex="7" id="customPercentLabel" class="reCalc">Custom
               <input type="text" class="hide" id="customEntry" ;></label>
           </div>
 
@@ -78,7 +78,7 @@
 
           <label for="peopleCount" class="labelIcon" id="peopleLabel">
             <img class="sourceIcon" src="images/icon-person.svg" alt="icon of person">
-            <input type="text" id="peopleCount" tabindex="8">
+            <input type="text" id="peopleCount" tabindex="8" class="reCalc">
           </label>
         </div>
       </div>
@@ -92,7 +92,6 @@
 
           <div class="two">
             <div class="dollar">$<span id="tipCalc">0.00</span> </div>
-            <!-- <input type="number" id="tipCalc" tabindex="-1"> -->
           </div>
 
           <div class="three">
@@ -102,7 +101,6 @@
 
           <div class="four">
             <div class="dollar">$<span id="totalCalc">0.00</span> </div>
-            <!-- <div type="number"  id="totalCalc" tabindex="-2"> -->
           </div>
 
           <button type="button" id="resetButton" class="five" tabindex="9" onclick="clearForm()">RESET</button>

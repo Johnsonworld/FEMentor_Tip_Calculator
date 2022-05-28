@@ -7,33 +7,20 @@
     --veryLightGrayishCyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
     --warning: hsl(20, 77%, 49%);
-
-
-
-
-
 }
-
-
-
 
 * {
-    box-sizing: border-box;
-    
-    
+    box-sizing: border-box;   
 }
 
-body {
-   
+body {   
     max-width: 375px;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-  
+    margin: 0 auto;  
     font-family: 'Space Mono', monospace;
     font-size: 24px;
-    background-color: var(--lightGrayishCyan);
-    
+    background-color: var(--lightGrayishCyan);    
 }
 
 header {
@@ -57,23 +44,15 @@ h2, .proportion {
     margin: 1.5rem 0 .75rem 0;
 }
 
-/* Test for children formatting... */
-/* #selectTipPercent > label {
-    font-size:.75rem;
-} */
 h3 {
     font-size: 1rem;
 }
-
-
 
 form {
     padding: 1.75rem;
     background-color: var(--white);
     border-radius: 1.5vh 1.5vh 0 0;
-    margin-bottom: 2rem;
-    
-    
+    margin-bottom: 2rem;  
 }
 
 
@@ -96,43 +75,27 @@ input {
     outline: 2px solid var(--primaryCyan);
 }
 
-
-
-
-
 #selectTipPercent {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    
-    
-    
     gap: 15px;
-
-    
-
 }
 
-#selectTipPercent input[type="radio"] {
-   
+#selectTipPercent input[type="radio"] { 
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-
 }
 
- #selectTipPercent label {
-    
+ #selectTipPercent label {    
     background-color: var(--veryDarkCyan);
     color: var(--white);
     padding: 1vh;
     border-radius: .5vh;
     text-align: center;
     display: block;
-    height: 5vh;
-    
-    
-    
+    height: 5vh;    
 }
 
  #selectTipPercent .customPerc label {
@@ -144,7 +107,6 @@ input {
 .howMuch {
     grid-column: 1/3;
     grid-row: 1;
-
 }
 
 .fivePerc {
@@ -153,31 +115,26 @@ input {
 }
 
 .tenPerc {
-   grid-column: 2 / 3; 
-   
-    grid-row: 2;
+   grid-column: 2 / 3;    
+   grid-row: 2;
 }
 
 .fifteenPerc {
    grid-column: 1/ 2; 
-  
-    grid-row: 3;
+   grid-row: 3;
 }
 
 .twentyfivePerc {
-   grid-column: 2 / 3; 
-   
-    grid-row: 3;
+   grid-column: 2 / 3;    
+   grid-row: 3;
 }
 
 .fiftyPerc {
-   grid-column: 1 / 2; 
-    
-    grid-row: 4;
+   grid-column: 1 / 2;  
+   grid-row: 4;
 }
 .customPerc {
-    grid-column: 2 / 3; 
-    
+    grid-column: 2 / 3;     
     grid-row: 4;
 }
 
@@ -188,14 +145,6 @@ input {
     background-color: var(--primaryCyan);
 }
 
-/* #selectTipPercent input[type="radio"]:focus + label {
-    background-color: var(--primaryCyan);
-} */
-
-/* #selectTipPercent label:hover {
-    background-color: var(--primaryCyan);
-}  */
-
 #customPercentLabel {
     position: relative;
 }
@@ -203,12 +152,12 @@ input {
 #customEntry {
     position: absolute;
     top: 0;
-  right: 0;
-  left: 0;
-  padding: 1vh;
+    right: 0;
+    left: 0;
+    padding: 1vh;
     border-radius: .5vh;
     text-align: right;
-   outline: 2px solid var(--primaryCyan);
+    outline: 2px solid var(--primaryCyan);
     height: 5vh;
     font-family: inherit;
 }
@@ -217,17 +166,16 @@ input {
   display: flex; 
   background-color: var(--veryLightGrayishCyan); 
   border-radius: 1.25vh;
-  padding-left:1rem;
-  
+  padding-left:1rem;  
 }
 
 
 
 .sourceIcon {
     height: 100%;
-
     align-self: center;
 }
+
 .calcTopLabel {
     color: var(--white);        
 }
@@ -235,16 +183,13 @@ input {
 #noZero {
     display: flex;
     justify-content: space-between;
-   
-
 }
 
 #inputWarning {
     font-size: 1rem;
     padding: 0;
     color: var(--warning);
-    display: none;
-    
+    display: none;    
 }
 
 
@@ -256,9 +201,7 @@ input {
     padding: 1rem 1.25rem;
     margin: 1rem 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* gap: 10px; */
-       
+    grid-template-columns: repeat(2, 1fr);      
 }
 
 #tipCalc, #totalCalc, .dollar {
@@ -267,38 +210,20 @@ input {
 }
 
 .one, .three {
-    grid-column: 1 / 2;
-    
+    grid-column: 1 / 2;    
     margin-top: 1rem;
 }
 
 .two, .four {
     grid-column: 2 / 3;
     text-align: right;
-    margin-top: 1rem;
-    
+    margin-top: 1rem;    
 }
-
-
-/* 
-.three {
-    grid-column: 1 / 2;
-   
-    margin-top: 1rem;
-} */
-
-/* .four {
-    grid-column: 2 / 3;
-    
-    outline: 2px peru solid;
-    margin-top: 1rem;
-} */
 
 .five {
     grid-column: 1 / 3;
     /* grid-row:5; */
-    margin: 1rem 0;
-    
+    margin: 1rem 0;    
 }
 
 
@@ -325,23 +250,16 @@ input {
 }
 
 .hide{
-  display:none;
-  
-  /* opacity: 0; */
-  
+  display:none; 
 }
+
 .show{
   display:block;
-  
-  /* margin: -50px 0; */
   z-index:10;
-  
- 
 }
 
 #inputWarning.visible {
     display: block;
-
 }
 
 #peopleLabel.visible {
@@ -351,37 +269,28 @@ input {
 
 @media screen and (min-width: 1025px) {
 
-    body {
-        
-        margin: 10vh 20vh;
-        
+    body {   
+        margin: 10vh 20vh;    
         max-width: 100%;
         height: 100px;
-        font-size: 30px;
-        
+        font-size: 30px;    
     }
     
     
-    form {
-        
+    form {   
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         border-radius: 1.5vh;
-        gap: 2rem;
-        
-        
-        
+        gap: 2rem;    
     }
 
-   
-
-    
     #calculatedResult {
         height: 100%;
         margin: 0;
         padding: 3rem 2rem .5rem 2rem;
     }
-     #resetButton {
+    
+    #resetButton {
         height: 4rem;    
     }
 
@@ -393,12 +302,11 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);    
     gap: 15px;
-}
+    }
 
 .howMuch {
     grid-column: 1/4;
     grid-row: 1;
-
 }
 
 .fivePerc {
@@ -408,30 +316,25 @@ input {
 
 .tenPerc {
    grid-column: 2 / 3; 
-   
     grid-row: 2;
 }
 
 .fifteenPerc {
    grid-column: 3/4; 
-  
     grid-row: 2;
 }
 
 .twentyfivePerc {
-   grid-column: 1 / 2; 
-   
+   grid-column: 1 / 2;   
     grid-row: 3;
 }
 
 .fiftyPerc {
-   grid-column: 2 / 3; 
-    
+   grid-column: 2 / 3;     
     grid-row: 3;
 }
 .customPerc {
-    grid-column: 3 / 4; 
-    
+    grid-column: 3 / 4;   
     grid-row: 3;
 }
 
@@ -443,10 +346,9 @@ input {
 
    
 @media screen and (min-width: 1441px) {
-    body {
-        
+    body {    
         margin: 10vh 50vh;
-}
+    }
 }
 
 
