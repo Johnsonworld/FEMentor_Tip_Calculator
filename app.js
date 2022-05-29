@@ -67,16 +67,21 @@ checkZero.addEventListener("change", getTipAmount);
 //------------------------------------------------------------
 
 //------------------------------------------------------------
-//Allow for recalculation with a change in selections,
+//Allow for recalculation with a change in selections except bill_amount,
 //instead of having to reset each time
 const update = document.getElementsByClassName("reCalc");
 
 for (var i = 0; i < update.length; i++) {
-   if (update[i].value !== "") {
+    if (update[i].value !== "" && update[i].value !== 0) {
+        if (update[i].id !== "bill_amount" && update[i].id !== "customPercentLabel") {
+            update[i].addEventListener("click", getTipAmount);
 
-    update[i].addEventListener("keydown", getTipAmount) 
-   }       
-   };
+        } else {
+
+            update[i].addEventListener("keypress", getTipAmount);
+        }
+    }
+};
 //-------------------------------------------------------------
 
 //-------------------------------------------------------------
@@ -111,7 +116,7 @@ function getTipAmount() {
     let amount = document.getElementById("bill_amount").value;
     let peoples = document.getElementById("peopleCount").value;
 
-    if (parseInt(peoples) === 0) {
+    if (parseInt(peoples) === 0 || peoples === "") {
         return;
     } else {
 

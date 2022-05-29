@@ -68,8 +68,18 @@ input {
     font-size: inherit;
     margin-right: 2rem;
     cursor:pointer;
-    outline:none;    
+    outline:none;  
+    font-family: inherit;  
 }
+
+#bill_amount::placeholder, 
+#peopleCount::placeholder {
+    color: var(--lightGrayishCyan);
+    font-family: inherit;
+
+}
+
+
 
 .labelIcon:hover, .labelIcon:focus-within {
     outline: 2px solid var(--primaryCyan);
@@ -349,6 +359,18 @@ input {
     body {    
         margin: 10vh 50vh;
     }
+
+     #selectTipPercent label {
+         padding-bottom: 5vh;
+         
+     }
+
+     #customEntry {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        padding-right: 4vh;
+        
+     }
 }
 
 
