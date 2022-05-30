@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://Johnsonworld.github.io/FEMentor_Tip_Calculator/](https://your-solution-url.com)
+- Solution URL: [Solution](https://github.com/Johnsonworld/FEMentor_Tip_Calculator)
 - Live Site URL: [Live Tip Calculator Site](https://Johnsonworld.github.io/FEMentor_Tip_Calculator/)
 
 ## My process
