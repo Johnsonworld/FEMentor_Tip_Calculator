@@ -105,7 +105,7 @@ input {
     border-radius: .5vh;
     text-align: center;
     display: block;
-    height: 5vh;    
+   
 }
 
  #selectTipPercent .customPerc label {
@@ -355,23 +355,7 @@ input {
 }
 
    
-@media screen and (min-width: 1441px) {
-    body {    
-        margin: 10vh 50vh;
-    }
 
-     #selectTipPercent label {
-         padding-bottom: 5vh;
-         
-     }
-
-     #customEntry {
-        padding-top: 3vh;
-        padding-bottom: 3vh;
-        padding-right: 4vh;
-        
-     }
-}
 
 
 
